@@ -36,6 +36,10 @@ Here you need to declare the input / output properties as dynamic as Quartz Comp
 			kQCPlugIn_Description, QCPlugInAttributeDescriptionKey, nil];
 }
 
++ (NSArray*) sortedPropertyPortKeys {
+	return [NSArray arrayWithObjects: @"inputCommandName",@"inputArguments",@"inputWorkingDir",nil];	
+}
+
 + (NSDictionary*) attributesForPropertyPortWithKey:(NSString*)key
 {
 	/*
