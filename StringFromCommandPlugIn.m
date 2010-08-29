@@ -144,12 +144,20 @@ Here you need to declare the input / output properties as dynamic as Quartz Comp
     NSPipe *newPipe = [NSPipe pipe];
     NSFileHandle *readHandle = [newPipe fileHandleForReading];
     NSData *inData = nil;
+	NSString *commandPath = [self.inputCommandName stringByTrimmingCharactersInSet:
+							 [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+		
+	[task setCurrentDirectoryPath: self.inputWorkingDir];
+	
+	[task setArguments: [self.inputArguments componentsSeparatedByString: @" "]];
+						
+
+	[task setLaunchPath: commandPath];
+
 	
     // write handle is closed to this process
     [task setStandardOutput:newPipe];
-	[task setCurrentDirectoryPath:self.inputWorkingDir];
-	[task setArguments: [self.inputArguments componentsSeparatedByString: @" "]];
-    [task setLaunchPath: self.inputCommandName];
+	
 	@try {
 		[task launch];
 		inData = [readHandle readDataToEndOfFile];
