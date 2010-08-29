@@ -59,7 +59,6 @@ Here you need to declare the input / output properties as dynamic as Quartz Comp
         return [NSDictionary dictionaryWithObjectsAndKeys:
 				@"Result", QCPortAttributeNameKey,
 				nil];
-	NSLog(@"Huh, %@", key);
 	return nil;
 }
 
@@ -83,13 +82,11 @@ Here you need to declare the input / output properties as dynamic as Quartz Comp
 
 - (id) init
 {
-	NSLog(@"Hey init");
 	if(self = [super init]) {
 		/*
 		Allocate any permanent resource required by the plug-in.
 		*/
 	}
-	NSLog(@"Hey init2");
 	return self;
 }
 
@@ -121,13 +118,11 @@ Here you need to declare the input / output properties as dynamic as Quartz Comp
 	Called by Quartz Composer when rendering of the composition starts: perform any required setup for the plug-in.
 	Return NO in case of fatal failure (this will prevent rendering of the composition to start).
 	*/
-	NSLog(@"Hey startExecution");
 	return YES;
 }
 
 - (void) enableExecution:(id<QCPlugInContext>)context
 {
-	NSLog(@"Hey enableExecution");
 	/*
 	Called by Quartz Composer when the plug-in instance starts being used by Quartz Composer.
 	*/
