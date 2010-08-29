@@ -1,0 +1,17 @@
+
+First attempt at QC plugin.
+
+Just whipped it together this evening. No documentation :)
+Only tried building and running on 10.6 intel, but should work elsewhere.
+
+provide a command path, a working directory, and an argument line.
+
+To build, open in Xcode (3.2), use target => build & copy => <right-click> => build & copy & start.
+
+Test it with the include TestPlugin.qtz project.
+
+I still haven't looked into which (if any) xcode project files to check in.
+I did remove all the ones which had my home directory listed.
+
+
+
