@@ -44,11 +44,12 @@ Here you need to declare the input / output properties as dynamic as Quartz Comp
 	if([key isEqualToString:@"inputCommandName"])
         return [NSDictionary dictionaryWithObjectsAndKeys:
 				@"Command Line", QCPortAttributeNameKey,
-				@"/bin/hostname", QCPortAttributeDefaultValueKey,
+				@"/usr/bin/man", QCPortAttributeDefaultValueKey,
 				nil];
 	if([key isEqualToString:@"inputArguments"])
         return [NSDictionary dictionaryWithObjectsAndKeys:
-				@"Command Line Arguments", QCPortAttributeNameKey,
+				@"Arguments", QCPortAttributeNameKey,
+				@"man", QCPortAttributeDefaultValueKey,
 				nil];
 	if([key isEqualToString:@"inputWorkingDir"])
         return [NSDictionary dictionaryWithObjectsAndKeys:
